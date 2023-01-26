@@ -19,20 +19,34 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            TP PIZZA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <img alt="" class="auto-style1" src="Picture/tppizza.png" /></div>
+            TP PIZZA&nbsp;&nbsp;<asp:Button ID="orders" runat="server" OnClick="orders_Click" Text="View Orders" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img alt="" class="auto-style1" src="Picture/tppizza.png" /><br />
+            <br />
+            Enter Name:<asp:TextBox ID="Txtcustomername" runat="server" style="margin-top: 0px"></asp:TextBox>
+        </div>
         <br />
-        Filters:<asp:RadioButtonList ID="RadioButtonList3" runat="server" Height="16px" OnSelectedIndexChanged="RadioButtonList3_SelectedIndexChanged">
-            <asp:ListItem>Small Size</asp:ListItem>
-            <asp:ListItem>Medium Size</asp:ListItem>
-            <asp:ListItem>Large Size</asp:ListItem>
+        Filters:<asp:RadioButtonList ID="sizelst" runat="server" Height="16px">
+            <asp:ListItem Value="5">Small Size</asp:ListItem>
+            <asp:ListItem Value="10">Medium Size</asp:ListItem>
+            <asp:ListItem Value="15">Large Size</asp:ListItem>
         </asp:RadioButtonList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:RadioButtonList ID="RadioButtonList4" runat="server" Height="42px" OnSelectedIndexChanged="RadioButtonList4_SelectedIndexChanged">
-            <asp:ListItem>Deep Pan Crust</asp:ListItem>
-            <asp:ListItem>Thin Crust</asp:ListItem>
-            <asp:ListItem>Stuffed Crust</asp:ListItem>
+        <asp:RadioButtonList ID="crustlst" runat="server" Height="42px">
+            <asp:ListItem Value="10">Deep Pan Crust</asp:ListItem>
+            <asp:ListItem Value="5">Thin Crust</asp:ListItem>
+            <asp:ListItem Value="15">Stuffed Crust</asp:ListItem>
         </asp:RadioButtonList>
+        <p>
+            <asp:RadioButtonList ID="pizzalst" runat="server">
+                <asp:ListItem Value="10">Margharita</asp:ListItem>
+                <asp:ListItem Value="14">Bbqchicken</asp:ListItem>
+            </asp:RadioButtonList>
+            <asp:Button ID="orderbtn" runat="server" OnClick="orderbtn_Click" Text="ORDER" />
+        </p>
+        <p>
+            <asp:Label ID="pricelbl" runat="server" Text="Label"></asp:Label>
+        </p>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TPs POPULAR PIZZAS OF THE WEEK</p>
         <p>
@@ -46,7 +60,7 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="Login" runat="server" Height="44px" Text="Login" />
+            <asp:Button ID="Login" runat="server" Height="44px" Text="Login" OnClick="Login_Click" />
         </p>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
