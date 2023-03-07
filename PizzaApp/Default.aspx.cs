@@ -30,16 +30,16 @@ namespace PizzaApp
             aramarkdatabaseEntities db = new aramarkdatabaseEntities();
 
             var dbPizzaorder = db.Pizzaorders;
-            /*
+            
             var newPizzaorder = new Pizzaorder();
             newPizzaorder.Customername = Txtcustomername.Text;
             newPizzaorder.Size = sizelst.SelectedItem.ToString();
             newPizzaorder.Crust = crustlst.SelectedItem.ToString();
             newPizzaorder.Pizza = pizzalst.SelectedItem.ToString();
-            newPizzaorder.Price = pricelbl.Text;
+            newPizzaorder.Price = pricelbl.Text.ToString();
             db.Pizzaorders.Add(newPizzaorder);
             db.SaveChanges();
-            */
+            
 
         }
 
